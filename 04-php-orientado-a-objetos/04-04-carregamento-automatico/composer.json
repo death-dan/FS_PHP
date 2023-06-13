@@ -1,0 +1,24 @@
+{
+    "name": "Teste/fsphp",
+    "description": "Full Stack PHP Developer",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Fernando Fernandes",
+            "email": "f.fernandes.r@gmail.com",
+            "homepage": "",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "vendor-lib": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        }
+    },
+    "require": {
+        "coffeecode/uploader": "^1.0"
+    }
+}

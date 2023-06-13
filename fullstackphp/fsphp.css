@@ -201,3 +201,7 @@ form button:hover {
     font-size: 0.8em;
     margin: 0;
 }
+
+.xdebug-var-dump small {
+    display: none;
+}
