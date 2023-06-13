@@ -1,12 +1,11 @@
 {
-    "name": "Teste/fsphp",
+    "name": "teste/fsphp",
     "description": "Full Stack PHP Developer",
     "minimum-stability": "stable",
     "authors": [
         {
             "name": "Fernando Fernandes",
             "email": "f.fernandes.r@gmail.com",
-            "homepage": "",
             "role": "Developer"
         }
     ],
