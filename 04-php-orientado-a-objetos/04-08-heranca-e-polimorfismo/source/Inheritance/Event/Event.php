@@ -26,7 +26,7 @@ class Event
         $this->vacancies = $vacancies;
     }
 
-    protected function register($fullName, $email)
+    public function register($fullName, $email)
     {
         if ($this->vacancies >= 1) {
             $this->vacancies -= 1;
