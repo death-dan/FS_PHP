@@ -11,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" executionDataType="PHAR" phpInterpreterId="d421ea38-b00a-470f-9ab3-f22f5be4fa23" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" executionDataType="PHAR" phpInterpreterId="d421ea38-b00a-470f-9ab3-f22f5be4fa23" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <pharPath>C:\xampp\htdocs\GitEssentials\FS_PHP\04-php-orientado-a-objetos\04-04-carregamento-automatico\composer.phar</pharPath>
   </component>
@@ -63,7 +63,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -76,31 +75,11 @@
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="04-php-orientado-a-objetos" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="04-php-orientado-a-objetos" type="462c0819:PsiDirectoryNode" />
-              <item name="04-04-carregamento-automatico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="04-php-orientado-a-objetos" type="462c0819:PsiDirectoryNode" />
-              <item name="04-04-carregamento-automatico" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="04-php-orientado-a-objetos" type="462c0819:PsiDirectoryNode" />
-              <item name="04-04-carregamento-automatico" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="Loading" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,11 +118,12 @@
       <option name="presentableId" value="Default" />
       <updated>1686572498599</updated>
       <workItem from="1686572503606" duration="2073000" />
+      <workItem from="1686856497855" duration="775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2073000" />
+    <option name="totallyTimeSpent" value="2848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
