@@ -4,6 +4,7 @@ fullStackPHPClassName("05.06 - Desmistificando transações");
 
 require __DIR__ . "/../source/autoload.php";
 
+use Source\DataBase\Conect;
 use Source\Database\Connect;
 
 /*
@@ -22,3 +23,27 @@ use Source\Database\Connect;
  * persistir no banco de dados (Uma transação só tem sentido se houver gravação)
  */
 fullStackPHPClassSession("transaction", __LINE__);
+
+try {
+    $pdo = Conect::getInstance();
+    $pdo->beginTransaction();
+
+    $pdo->query("
+        INSERT INTO users (first_name, last_name, email, document)
+        VALUES ('Jose', 'Maria', 'email2@email.com', '0987655');
+    ");
+
+    $userId = $pdo->lastInsertId();
+
+    $pdo->query("
+        INSERT INTO users_address (user_id, street, number, complement)
+        VALUES ('{$userId}', 'Rua do Bras', '666', 'Bloco 5 Apt 40');
+    ");
+
+    $pdo->commit();
+
+    echo "<p class='trigger accept'>Cadrastro com Sucesso!</p>";
+} catch (PDOException $ex) {
+    $pdo->rollBack();
+    var_dump($ex);
+}
