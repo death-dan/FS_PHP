@@ -2,6 +2,8 @@
 
 namespace Source\Models;
 
+use Source\DataBase\Conect;
+
 abstract class Model
 {
     /** @var object|null */
@@ -12,6 +14,25 @@ abstract class Model
 
     /** @var string|null */
     protected $message;
+
+    public function __set($name, $value)
+    {
+        if (empty($this->data)) {
+            $this->data = new \stdClass();
+        }
+
+        $this->data->$name = $value;
+    }
+
+    public function __isset($name)
+    {
+        return isset($this->data->$name);
+    }
+
+    public function __get($name)
+    {
+        return ($this->data->$name ?? null);
+    }
 
     /**
      * @return null|object
@@ -42,9 +63,25 @@ abstract class Model
 
     }
 
-    protected function read()
+    protected function read(string $select, string $params = null): ?\PDOStatement
     {
+        try {
+            $stmt = Conect::getInstance()->prepare($select);
+            if ($params) {
+                parse_str($params, $params);
+                foreach($params as $key => $value) {
+                    $type = (is_numeric($value) ? \PDO::PARAM_INT : \PDO::PARAM_STR);
+                    $stmt->bindValue(":{$key}", $value, $type);
+                }
+            }
 
+            $stmt->execute();
+            return $stmt;
+
+        } catch (\PDOException $execpetion) {
+            $this->fail = $execpetion;
+            return null;
+        }
     }
 
     protected function update()
