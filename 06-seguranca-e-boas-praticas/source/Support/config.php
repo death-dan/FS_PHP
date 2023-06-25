@@ -11,7 +11,8 @@ define("CONF_DB_NAME", "fsphp");
 /**
  * PROJECT URLs
  */
-define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP");
+// define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP");
+define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/06-seguranca-e-boas-praticas/06-08-camada-de-manipulacao-pt3");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
 
@@ -25,6 +26,12 @@ define("CONF_DATE_APP", "Y-m-d H:i:s");
  * SESSION
  */
 define("CONF_SES_PATH", __DIR__ . "/../../storage/session/"); 
+
+/**
+ * PASSWORD
+ */
+define("CONF_PASSWD_MIN_LEN", 8);
+define("CONF_PASSWD_MAX_LEN", 40);
 
 /**
  * MESSAGE

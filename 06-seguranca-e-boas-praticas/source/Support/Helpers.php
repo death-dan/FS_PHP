@@ -1,10 +1,41 @@
 <?php
 
 /**
+ * ####################
+ * ###   VALIDATE   ###
+ * ####################
+ */
+
+ 
+ /**
+  * is_email
+  *
+  * @param  mixed $email
+  * @return bool
+  */
+function is_email(string $email): bool
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+/**
+ * is_passwd
+ *
+ * @param  mixed $passwd
+ * @return bool
+ */
+function is_passwd(string $passwd): bool
+{
+    return (mb_strlen($passwd) >= CONF_PASSWD_MIN_LEN && mb_strlen($passwd) <= CONF_PASSWD_MAX_LEN ? true : false);
+}
+
+
+/**
  * ##################
  * ###   STRING   ###
  * ##################
  */
+
  
  /**
   * str_slug
@@ -67,9 +98,9 @@ function str_title(string $string): string
 /**
  * str_limit_words
  *
- * @param  mixed $string
- * @param  mixed $limit
- * @param  mixed $pointer
+ * @param  string $string
+ * @param  int $limit
+ * @param  string $pointer
  * @return string
  */
 function str_limit_words(string $string, int $limit, string $pointer = "..."): string
@@ -86,6 +117,14 @@ function str_limit_words(string $string, int $limit, string $pointer = "..."): s
     return "{$words}{$pointer}";
 }
 
+/**
+ * str_limit_chars
+ *
+ * @param  string $string
+ * @param  int $limit
+ * @param  string $pointer
+ * @return string
+ */
 function str_limit_chars(string $string, int $limit, string $pointer = "..."): string
 {
     $string = trim(filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS));
@@ -96,4 +135,97 @@ function str_limit_chars(string $string, int $limit, string $pointer = "..."): s
 
     $chars = mb_substr($string, 0, mb_strrpos(mb_substr($string, 0, $limit), " "));
     return "{$chars}{$pointer}";
+}
+
+
+/**
+ * ################
+ * ###   URLs   ###
+ * ################
+ */
+
+
+/**
+ * url
+ *
+ * @param  mixed $path
+ * @return string
+ */
+function url(string $path): string
+{
+    return CONF_URL_BASE . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
+}
+
+/**
+ * redirect
+ *
+ * @param  mixed $url
+ * @return void
+ */
+function redirect(string $url): void
+{
+    header("HTTP/1.1 302 Redirect");
+    if (filter_var($url, FILTER_VALIDATE_URL)) {
+        header("Location: {$url}");
+        exit;
+    }
+
+    $location = url($url);
+    header("Location: {$location}");
+    exit;
+}
+
+
+/**
+ * ###############
+ * ###   CORE  ###
+ * ###############
+ */
+
+ 
+ /**
+  * db
+  *
+  * @return PDO
+  */
+function db(): PDO
+{
+    return \Source\Core\Conect::getInstance();
+}
+
+/**
+ * message
+ *
+ * @return Source\Core\Message
+ */
+function message(): \Source\Core\Message
+{
+    return new \Source\Core\Message();
+}
+
+/**
+ * session
+ *
+ * @return Source\Core\Session
+ */
+function session(): \Source\Core\Session
+{
+    return new \Source\Core\Session();
+}
+
+/**
+ * ################
+ * ###   MODEL  ###
+ * ################
+ */
+
+
+/**
+ * user
+ *
+ * @return Source\Models\User
+ */
+function user(): \Source\Models\User
+{
+    return new \Source\Models\User();
 }
