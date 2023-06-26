@@ -63,6 +63,31 @@ function passwd_rehash(string $hash): bool
     return password_needs_rehash($hash, CONF_PASSWD_ALGO, CONF_PASSWD_OPTION);
 }
 
+/**
+ * csrf_input
+ *
+ * @return string
+ */
+function csrf_input(): string
+{
+    session()->csrf();
+    return "<input type='hidden' name='csrf' value='" . (session()->csrf_token ?? "") . "'/>"; 
+}
+
+/**
+ * csrf_verify
+ *
+ * @param  mixed $request
+ * @return bool
+ */
+function csrf_verify($request): bool
+{
+    if (empty(session()->csrf_token) || empty($request['csrf']) || $request['csrf'] != session()->csrf_token) {
+        return false;
+    }
+    return true;
+}
+
 
 /**
  * ##################
