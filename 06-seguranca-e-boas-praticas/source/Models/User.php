@@ -31,8 +31,15 @@ class User extends Model
         }
         return $load->fetchObject(__CLASS__);
     }
-
-    public function find($email, string $columns = "*"): ?User
+    
+    /**
+     * find
+     *
+     * @param  mixed $email
+     * @param  mixed $columns
+     * @return User
+     */
+    public function find(string $email, string $columns = "*"): ?User
     {
         $find = $this->read("SELECT {$columns} FROM " . self::$entity . " WHERE email = :email", "email={$email}");
         if ($this->fail() || !$find->rowCount()) {
@@ -65,7 +72,7 @@ class User extends Model
 
             if ($email->rowCount()) {
                 $this->message = "O e-mail informado já está cadastrado";
-                return null;
+                // return null;
             }
 
             $this->update(self::$entity, $this->safe(), "id = :id", "id={$userId}");

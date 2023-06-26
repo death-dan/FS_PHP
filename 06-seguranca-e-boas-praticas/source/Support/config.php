@@ -32,6 +32,8 @@ define("CONF_SES_PATH", __DIR__ . "/../../storage/session/");
  */
 define("CONF_PASSWD_MIN_LEN", 8);
 define("CONF_PASSWD_MAX_LEN", 40);
+define("CONF_PASSWD_ALGO", PASSWORD_DEFAULT);
+define("CONF_PASSWD_OPTION", ["cost" => 10]);
 
 /**
  * MESSAGE

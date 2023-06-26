@@ -79,12 +79,11 @@ abstract class Model
             $stmt = Conect::getInstance()->prepare($select);
             if ($params) {
                 parse_str($params, $params);
-                foreach((array)$params as $key => $value) {
+                foreach($params as $key => $value) {
                     $type = (is_numeric($value) ? \PDO::PARAM_INT : \PDO::PARAM_STR);
                     $stmt->bindValue(":{$key}", $value, $type);
                 }
             }
-
             $stmt->execute();
             return $stmt;
 
@@ -123,7 +122,7 @@ abstract class Model
         try {
             $stmt = Conect::getInstance()->prepare("DELETE FROM {$entity} WHERE {$terms}");
             parse_str($params, $params);
-            $stmt->execute((array)$params);
+            $stmt->execute($params);
             return ($stmt->rowCount() ?? 1);
 
         } catch (\PDOException $execpetion) {
