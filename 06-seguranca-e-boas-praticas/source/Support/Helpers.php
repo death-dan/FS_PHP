@@ -24,9 +24,12 @@ function is_email(string $email): bool
  * @param  mixed $passwd
  * @return bool
  */
-function is_passwd(string $passwd): bool
+function is_passwd(string $password): bool
 {
-    return (mb_strlen($passwd) >= CONF_PASSWD_MIN_LEN && mb_strlen($passwd) <= CONF_PASSWD_MAX_LEN ? true : false);
+    if (password_get_info($password)['algo']) {
+        return true;
+    }
+    return (mb_strlen($password) >= CONF_PASSWD_MIN_LEN && mb_strlen($password) <= CONF_PASSWD_MAX_LEN ? true : false);
 }
 
 /**
