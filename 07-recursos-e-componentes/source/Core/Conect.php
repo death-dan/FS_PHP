@@ -6,11 +6,10 @@ use \PDO;
 use \PDOException;
 
 /**
- * Class Connect Singleton Pattern
- * @author Robson V. Leite <cursos@upinside.com.br>
+ * Class Conect
  * @package Source\Core
  */
-class Connect
+class Conect
 {
     private const OPTIONS = [
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
@@ -34,25 +33,29 @@ class Connect
                     CONF_DB_PASS,
                     self::OPTIONS
                 );
-            } catch (PDOException $exception) {
-                die("<h1>Whoops! Erro ao conectar...</h1>");
+    
+            } catch (PDOException $e) {
+                die("<h1>Whoopss!!! Erro ao conectar...</h1>");
             }
-        }
+        }     
 
         return self::$instance;
     }
 
     /**
-     * Connect constructor.
+     * Conect construtor
      */
     final private function __construct()
     {
+        
     }
 
     /**
-     * Connect clone.
+     * Conect clone
      */
-    final private function __clone()
-    {
-    }
+    // final private function __clone()
+    // {
+
+    // }
+
 }

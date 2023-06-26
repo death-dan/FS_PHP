@@ -3,27 +3,25 @@
 namespace Source\Core;
 
 /**
- * Class Message
- * @author Robson V. Leite <cursos@upinside.com.br>
- * @package Source\Core
+ * Message
  */
 class Message
 {
     private $text;
     private $type;
-
+    
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
-
+    
     /**
      * @return string
      */
-    public function getText(): ?string
+    public function getText(): string
     {
         return $this->text;
     }
@@ -31,13 +29,13 @@ class Message
     /**
      * @return string
      */
-    public function getType(): ?string
+    public function getType(): string
     {
         return $this->type;
     }
 
     /**
-     * @param string $message
+     * @param  mixed $message
      * @return Message
      */
     public function info(string $message): Message
@@ -46,9 +44,9 @@ class Message
         $this->text = $this->filter($message);
         return $this;
     }
-
+    
     /**
-     * @param string $message
+     * @param  mixed $message
      * @return Message
      */
     public function success(string $message): Message
@@ -59,7 +57,7 @@ class Message
     }
 
     /**
-     * @param string $message
+     * @param  mixed $message
      * @return Message
      */
     public function warning(string $message): Message
@@ -70,7 +68,7 @@ class Message
     }
 
     /**
-     * @param string $message
+     * @param  mixed $message
      * @return Message
      */
     public function error(string $message): Message
@@ -79,15 +77,15 @@ class Message
         $this->text = $this->filter($message);
         return $this;
     }
-
+    
     /**
      * @return string
      */
     public function render(): string
     {
-        return "<div class='" . CONF_MESSAGE_CLASS . " {$this->getType()}'>{$this->getText()}</div>";
+        return "<div class='" . CONF_MESSAGE_CLASS . " {$this->type}'>{$this->text}</div>";
     }
-
+    
     /**
      * @return string
      */
@@ -95,21 +93,21 @@ class Message
     {
         return json_encode(["error" => $this->getText()]);
     }
-
+    
     /**
-     * Set flash Session Key
+     * @return void
      */
     public function flash(): void
     {
-        (new Session())->set("flash", $this);
+    (new Session())->set("flash", $this);
     }
-
+    
     /**
-     * @param string $message
+     * @param  mixed $message
      * @return string
      */
     private function filter(string $message): string
     {
-        return filter_var($message, FILTER_SANITIZE_STRIPPED);
+        return filter_var($message, FILTER_SANITIZE_SPECIAL_CHARS);
     }
 }

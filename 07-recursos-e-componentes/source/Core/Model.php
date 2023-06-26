@@ -2,11 +2,6 @@
 
 namespace Source\Core;
 
-/**
- * Class Model Layer Supertype Pattern
- * @author Robson V. Leite <cursos@upinside.com.br>
- * @package Source\Models
- */
 abstract class Model
 {
     /** @var object|null */
@@ -17,18 +12,20 @@ abstract class Model
 
     /** @var Message|null */
     protected $message;
-
+    
     /**
-     * Model constructor.
+     * Model constructor
      */
     public function __construct()
     {
         $this->message = new Message();
     }
-
+    
     /**
-     * @param $name
-     * @param $value
+     * __set
+     *
+     * @param  mixed $name
+     * @param  mixed $value
      */
     public function __set($name, $value)
     {
@@ -39,19 +36,11 @@ abstract class Model
         $this->data->$name = $value;
     }
 
-    /**
-     * @param $name
-     * @return bool
-     */
     public function __isset($name)
     {
         return isset($this->data->$name);
     }
 
-    /**
-     * @param $name
-     * @return null
-     */
     public function __get($name)
     {
         return ($this->data->$name ?? null);
@@ -66,7 +55,7 @@ abstract class Model
     }
 
     /**
-     * @return \PDOException
+     * @return null|\PDOException
      */
     public function fail(): ?\PDOException
     {
@@ -80,11 +69,13 @@ abstract class Model
     {
         return $this->message;
     }
-
+    
     /**
-     * @param string $entity
-     * @param array $data
-     * @return int|null
+     * create
+     *
+     * @param  mixed $entity
+     * @param  mixed $data
+     * @return int
      */
     protected function create(string $entity, array $data): ?int
     {
@@ -92,28 +83,31 @@ abstract class Model
             $columns = implode(", ", array_keys($data));
             $values = ":" . implode(", :", array_keys($data));
 
-            $stmt = Connect::getInstance()->prepare("INSERT INTO {$entity} ({$columns}) VALUES ({$values})");
+            $stmt = Conect::getInstance()->prepare("INSERT INTO {$entity} ({$columns}) VALUES ({$values})");
             $stmt->execute($this->filter($data));
 
-            return Connect::getInstance()->lastInsertId();
-        } catch (\PDOException $exception) {
-            $this->fail = $exception;
+            return Conect::getInstance()->lastInsertId();
+
+        } catch (\PDOException $execpetion) {
+            $this->fail = $execpetion;
             return null;
         }
     }
-
+    
     /**
-     * @param string $select
-     * @param string|null $params
-     * @return null|\PDOStatement
+     * read
+     *
+     * @param  mixed $select
+     * @param  mixed $params
+     * @return PDOStatement|null
      */
     protected function read(string $select, string $params = null): ?\PDOStatement
     {
         try {
-            $stmt = Connect::getInstance()->prepare($select);
+            $stmt = Conect::getInstance()->prepare($select);
             if ($params) {
                 parse_str($params, $params);
-                foreach ($params as $key => $value) {
+                foreach($params as $key => $value) {
                     if ($key == 'limit' || $key == 'offset') {
                         $stmt->bindValue(":{$key}", $value, \PDO::PARAM_INT);
                     } else {
@@ -121,92 +115,105 @@ abstract class Model
                     }
                 }
             }
-
             $stmt->execute();
             return $stmt;
-        } catch (\PDOException $exception) {
-            $this->fail = $exception;
+
+        } catch (\PDOException $execpetion) {
+            $this->fail = $execpetion;
             return null;
         }
     }
-
+    
     /**
-     * @param string $entity
-     * @param array $data
-     * @param string $terms
-     * @param string $params
-     * @return int|null
+     * update
+     *
+     * @param  mixed $entity
+     * @param  mixed $data
+     * @param  mixed $terms
+     * @param  mixed $params
+     * @return int
      */
     protected function update(string $entity, array $data, string $terms, string $params): ?int
     {
         try {
-            $dateSet = [];
-            foreach ($data as $bind => $value) {
-                $dateSet[] = "{$bind} = :{$bind}";
+            $dataSet = [];
+            foreach($data as $bind => $value) {
+                $dataSet[] = "{$bind} = :{$bind}";
             }
-            $dateSet = implode(", ", $dateSet);
+
+            $dataSet = implode(", ", $dataSet);
             parse_str($params, $params);
 
-            $stmt = Connect::getInstance()->prepare("UPDATE {$entity} SET {$dateSet} WHERE {$terms}");
+            $stmt = Conect::getInstance()->prepare("UPDATE {$entity} SET {$dataSet} WHERE {$terms}");
             $stmt->execute($this->filter(array_merge($data, $params)));
+
             return ($stmt->rowCount() ?? 1);
-        } catch (\PDOException $exception) {
-            $this->fail = $exception;
+
+        } catch (\PDOException $execpetion) {
+            $this->fail = $execpetion;
             return null;
         }
-    }
 
+        var_dump($entity, $data, $terms, $params);
+    }
+    
     /**
-     * @param string $entity
-     * @param string $terms
-     * @param string $params
-     * @return int|null
+     * delete
+     *
+     * @param  mixed $entity
+     * @param  mixed $terms
+     * @param  mixed $params
+     * @return int
      */
     protected function delete(string $entity, string $terms, string $params): ?int
     {
         try {
-            $stmt = Connect::getInstance()->prepare("DELETE FROM {$entity} WHERE {$terms}");
+            $stmt = Conect::getInstance()->prepare("DELETE FROM {$entity} WHERE {$terms}");
             parse_str($params, $params);
             $stmt->execute($params);
             return ($stmt->rowCount() ?? 1);
-        } catch (\PDOException $exception) {
-            $this->fail = $exception;
+
+        } catch (\PDOException $execpetion) {
+            $this->fail = $execpetion;
             return null;
         }
     }
-
+    
     /**
-     * @return array|null
+     * safe
+     *
+     * @return array
      */
     protected function safe(): ?array
     {
         $safe = (array)$this->data;
-        foreach (static::$safe as $unset) {
+        foreach(static::$safe as $unset) {
             unset($safe[$unset]);
         }
+
         return $safe;
     }
-
+    
     /**
-     * @param array $data
-     * @return array|null
+     * filter
+     *
+     * @param  mixed $data
+     * @return array
      */
     private function filter(array $data): ?array
     {
         $filter = [];
-        foreach ($data as $key => $value) {
+        foreach($data as $key => $value) {
             $filter[$key] = (is_null($value) ? null : filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS));
         }
+
         return $filter;
     }
 
-    /**
-     * @return bool
-     */
     protected function required(): bool
     {
         $data = (array)$this->data();
-        foreach (static::$required as $field) {
+        foreach(static::$required as $field) {
             if (empty($data[$field])) {
                 return false;
             }

@@ -3,14 +3,10 @@
 namespace Source\Core;
 
 /**
- * Class Session
- * @package Source\Core
+ * Session
  */
 class Session
 {
-    /**
-     * Session constructor.
-     */
     public function __construct()
     {
         if (!session_id()) {
@@ -21,7 +17,7 @@ class Session
 
     /**
      * @param $name
-     * @return null|mixed
+     * @return null
      */
     public function __get($name)
     {
@@ -35,22 +31,26 @@ class Session
      * @param $name
      * @return bool
      */
-    public function __isset($name)
+    public function __isset($name): bool
     {
         return $this->has($name);
     }
-
+    
     /**
-     * @return null|object
+     * all
+     *
+     * @return object
      */
     public function all(): ?object
     {
-        return (object)$_SESSION;
+        return  (object)$_SESSION;
     }
-
+    
     /**
-     * @param string $key
-     * @param mixed $value
+     * set
+     *
+     * @param  mixed $key
+     * @param  mixed $value
      * @return Session
      */
     public function set(string $key, $value): Session
@@ -58,9 +58,11 @@ class Session
         $_SESSION[$key] = (is_array($value) ? (object)$value : $value);
         return $this;
     }
-
+    
     /**
-     * @param string $key
+     * unset
+     *
+     * @param  mixed $key
      * @return Session
      */
     public function unset(string $key): Session
@@ -68,17 +70,21 @@ class Session
         unset($_SESSION[$key]);
         return $this;
     }
-
+    
     /**
-     * @param string $key
+     * has
+     *
+     * @param  mixed $key
      * @return bool
      */
     public function has(string $key): bool
     {
         return isset($_SESSION[$key]);
     }
-
+    
     /**
+     * regenerate
+     *
      * @return Session
      */
     public function regenerate(): Session
@@ -86,8 +92,10 @@ class Session
         session_regenerate_id(true);
         return $this;
     }
-
+    
     /**
+     * destroy
+     *
      * @return Session
      */
     public function destroy(): Session
@@ -95,7 +103,7 @@ class Session
         session_destroy();
         return $this;
     }
-
+    
     /**
      * @return null|Message
      */
@@ -108,7 +116,7 @@ class Session
         }
         return null;
     }
-
+    
     /**
      * CSRF Token
      */

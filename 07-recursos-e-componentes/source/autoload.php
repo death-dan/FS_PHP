@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/Support/Config.php";
+require __DIR__ . "/Support/config.php";
 require __DIR__ . "/Support/Helpers.php";
 
 spl_autoload_register(function ($class) {
