@@ -111,6 +111,20 @@ class User extends Model
             return null;
         }
 
+        if (!is_email($this->email)) {
+            $this->message()->warning("O e-mail informado não tem um formato válido");
+            return null;
+        }
+
+        if (!is_passwd($this->password)) {
+            $min = CONF_PASSWD_MIN_LEN;
+            $max = CONF_PASSWD_MAX_LEN;
+            $this->message()->warning("A senha de ter entre {$min} e {$max} caracteres");    
+            return null;
+        } else {
+            $this->password = passwd($this->password);
+        }
+
         /** User Update */
         if (!empty($this->id)) {
             $userId = $this->id;
