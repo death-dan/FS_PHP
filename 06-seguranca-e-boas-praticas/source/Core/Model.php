@@ -10,9 +10,23 @@ abstract class Model
     /** @var \PDOException|null */
     protected $fail;
 
-    /** @var string|null */
+    /** @var Message|null */
     protected $message;
-
+    
+    /**
+     * Model constructor
+     */
+    public function __construct()
+    {
+        $this->message = new Message();
+    }
+    
+    /**
+     * __set
+     *
+     * @param  mixed $name
+     * @param  mixed $value
+     */
     public function __set($name, $value)
     {
         if (empty($this->data)) {
@@ -49,13 +63,20 @@ abstract class Model
     }
 
     /**
-     * @return null|string
+     * @return Message|null
      */
-    public function message(): ?string
+    public function message(): ?Message
     {
         return $this->message;
     }
-
+    
+    /**
+     * create
+     *
+     * @param  mixed $entity
+     * @param  mixed $data
+     * @return int
+     */
     protected function create(string $entity, array $data): ?int
     {
         try {
@@ -72,7 +93,14 @@ abstract class Model
             return null;
         }
     }
-
+    
+    /**
+     * read
+     *
+     * @param  mixed $select
+     * @param  mixed $params
+     * @return PDOStatement|null
+     */
     protected function read(string $select, string $params = null): ?\PDOStatement
     {
         try {
@@ -92,7 +120,16 @@ abstract class Model
             return null;
         }
     }
-
+    
+    /**
+     * update
+     *
+     * @param  mixed $entity
+     * @param  mixed $data
+     * @param  mixed $terms
+     * @param  mixed $params
+     * @return int
+     */
     protected function update(string $entity, array $data, string $terms, string $params): ?int
     {
         try {
@@ -116,7 +153,15 @@ abstract class Model
 
         var_dump($entity, $data, $terms, $params);
     }
-
+    
+    /**
+     * delete
+     *
+     * @param  mixed $entity
+     * @param  mixed $terms
+     * @param  mixed $params
+     * @return int
+     */
     protected function delete(string $entity, string $terms, string $params): ?int
     {
         try {
@@ -130,7 +175,12 @@ abstract class Model
             return null;
         }
     }
-
+    
+    /**
+     * safe
+     *
+     * @return array
+     */
     protected function safe(): ?array
     {
         $safe = (array)$this->data;
@@ -140,7 +190,13 @@ abstract class Model
 
         return $safe;
     }
-
+    
+    /**
+     * filter
+     *
+     * @param  mixed $data
+     * @return array
+     */
     private function filter(array $data): ?array
     {
         $filter = [];
@@ -149,5 +205,16 @@ abstract class Model
         }
 
         return $filter;
+    }
+
+    protected function required(): bool
+    {
+        $data = (array)$this->data();
+        foreach(static::$required as $field) {
+            if (empty($data[$field])) {
+                return false;
+            }
+        }
+        return true;
     }
 }
