@@ -43,3 +43,19 @@ define("CONF_MESSAGE_INFO", "info");
 define("CONF_MESSAGE_SUCCESS", "success");
 define("CONF_MESSAGE_WARNING", "warning");
 define("CONF_MESSAGE_ERROR", "error");
+
+/**
+ * MAIL
+ */
+define("CONF_MAIL_HOST", "smtp.sendgrid.net");
+define("CONF_MAIL_PORT", "587");
+define("CONF_MAIL_USER", "apikey");
+define("CONF_MAIL_PASS", "");
+define("CONF_MAIL_SENDER", ["name" => "Fernando Fernandes", "address" => "death_dan@hotmail.com"]);
+define("CONF_MAIL_OPTION_LANG", "pt");
+define("CONF_MAIL_OPTION_HTML", true);
+define("CONF_MAIL_OPTION_AUTH", true);
+define("CONF_MAIL_OPTION_SECURE", "tls");
+define("CONF_MAIL_OPTION_CHARSET", "utf-8");
+
+
