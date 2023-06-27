@@ -77,7 +77,7 @@ class Email
             return false;
         }
 
-        if (!is_email($this->data->toEmail)) {
+        if (!is_email($this->data->toMail)) {
             $this->message->warning("O e-mail de destinatário não é válido");
             return false;
         }
@@ -90,7 +90,7 @@ class Email
         try {
             $this->mail->Subject = $this->data->subject;
             $this->mail->msgHTML($this->data->message);
-            $this->mail->addAddress($this->data->toEmail, $this->data->toName);
+            $this->mail->addAddress($this->data->toMail, $this->data->toName);
             $this->mail->setFrom($fromEmail, $fromName);
 
             if (!empty($this->data->attach)) {
