@@ -3,13 +3,22 @@
         'name' => 'teste/fsphp',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'a4d791541b4bed54c407c2016df3cc7624588295',
+        'reference' => '993da34d017ce9cef6602c54479f2f3f09778b6d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'league/plates' => array(
+            'pretty_version' => 'v3.5.0',
+            'version' => '3.5.0.0',
+            'reference' => 'a6a3238e46c6e19af7318fdc36bfbe49b0620231',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/plates',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'phpmailer/phpmailer' => array(
             'pretty_version' => 'v6.8.0',
             'version' => '6.8.0.0',
@@ -22,7 +31,7 @@
         'teste/fsphp' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a4d791541b4bed54c407c2016df3cc7624588295',
+            'reference' => '993da34d017ce9cef6602c54479f2f3f09778b6d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

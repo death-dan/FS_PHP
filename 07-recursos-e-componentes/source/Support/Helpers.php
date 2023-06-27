@@ -239,6 +239,47 @@ function redirect(string $url): void
 
 
 /**
+ * ################
+ * ###   DATE   ###
+ * ################
+ */
+
+/**
+ * date_fmt
+ *
+ * @param  mixed $date
+ * @param  mixed $format
+ * @return string
+ */
+function date_fmt(string $date = "now", string $format = "d/m/Y H\hi"): string
+{
+    return (new DateTime($date))->format($format);
+}
+
+/**
+ * date_fmt_br
+ *
+ * @param  mixed $date
+ * @return string
+ */
+function date_fmt_br(string $date = "now"): string
+{
+    return (new DateTime($date))->format(CONF_DATE_BR);
+}
+
+/**
+ * date_fmt_app
+ *
+ * @param  mixed $date
+ * @return string
+ */
+function date_fmt_app(string $date = "now"): string
+{
+    return (new DateTime($date))->format(CONF_DATE_APP);
+}
+
+
+/**
  * ###############
  * ###   CORE  ###
  * ###############

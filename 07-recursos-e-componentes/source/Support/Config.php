@@ -12,7 +12,7 @@ define("CONF_DB_NAME", "fsphp");
  * PROJECT URLs
  */
 // define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP");
-define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/06-seguranca-e-boas-praticas/06-08-camada-de-manipulacao-pt3");
+define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/07-recursos-e-componentes/07-06-uma-camada-de-visualizacao");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
 
@@ -43,6 +43,12 @@ define("CONF_MESSAGE_INFO", "info");
 define("CONF_MESSAGE_SUCCESS", "success");
 define("CONF_MESSAGE_WARNING", "warning");
 define("CONF_MESSAGE_ERROR", "error");
+
+/**
+ * VIEW
+ */
+define("CONF_VIEW_PATH", __DIR__ . "/../../assets/views/");
+define("CONF_VIEW_EXT", "php");
 
 /**
  * MAIL
