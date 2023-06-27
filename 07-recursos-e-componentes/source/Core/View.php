@@ -2,7 +2,7 @@
 
 namespace Source\Core;
 
-use League\Plates\Engine;
+use \League\Plates\Engine;
 
 class View
 {
@@ -32,7 +32,6 @@ class View
     {
         $this->engine->addFolder($name, $path);
         return $this;
-        var_dump($path);
     }
     
     /**

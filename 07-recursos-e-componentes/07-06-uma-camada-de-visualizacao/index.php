@@ -9,7 +9,7 @@ session_start();
  */
 fullStackPHPClassSession("plates", __LINE__);
 
-$plates = new League\Plates\Engine(__DIR__ . "/assets/views", "php");
+$plates = new League\Plates\Engine(__DIR__ . "/../assets/views", "php");
 var_dump(get_class_methods($plates));
 
 // $plates->addFolder("test", __DIR__ . "/assets/views/test");
