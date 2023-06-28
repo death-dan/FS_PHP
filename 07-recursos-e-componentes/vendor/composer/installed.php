@@ -3,13 +3,22 @@
         'name' => 'teste/fsphp',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '993da34d017ce9cef6602c54479f2f3f09778b6d',
+        'reference' => 'd67ad956b398a4ae5a7f04a833b87c08c80bfa95',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'coffeecode/uploader' => array(
+            'pretty_version' => '2.0.4',
+            'version' => '2.0.4.0',
+            'reference' => '4601ff1665a4591087c524239c1e545ba4834453',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../coffeecode/uploader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'league/plates' => array(
             'pretty_version' => 'v3.5.0',
             'version' => '3.5.0.0',
@@ -31,7 +40,7 @@
         'teste/fsphp' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '993da34d017ce9cef6602c54479f2f3f09778b6d',
+            'reference' => 'd67ad956b398a4ae5a7f04a833b87c08c80bfa95',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

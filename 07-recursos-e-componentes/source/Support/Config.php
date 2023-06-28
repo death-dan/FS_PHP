@@ -12,7 +12,7 @@ define("CONF_DB_NAME", "fsphp");
  * PROJECT URLs
  */
 // define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP");
-define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/07-recursos-e-componentes/07-06-uma-camada-de-visualizacao");
+define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/07-recursos-e-componentes");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
 
@@ -49,6 +49,21 @@ define("CONF_MESSAGE_ERROR", "error");
  */
 define("CONF_VIEW_PATH", __DIR__ . "/../../assets/views");
 define("CONF_VIEW_EXT", "php");
+
+/**
+ * UPLOADS
+ */
+define("CONF_UPLOAD_DIR", "../storage/uploads");
+define("CONF_UPLOAD_IMAGE_DIR", "images");
+define("CONF_UPLOAD_FILE_DIR", "files");
+define("CONF_UPLOAD_MEDIA_DIR", "medias");
+
+/**
+ * IMAGES
+ */
+define("CONF_IMAGE_CACHE", CONF_UPLOAD_DIR . "/" . CONF_UPLOAD_IMAGE_DIR . "/cache");
+define("CONF_IMAGE_SIZE", 2000);
+define("CONF_IMAGE_QUALITY", ["jpg" => 75, "png" => 5]);
 
 /**
  * MAIL
