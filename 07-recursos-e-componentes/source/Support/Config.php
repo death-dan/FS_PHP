@@ -9,9 +9,26 @@ define("CONF_DB_PASS", "");
 define("CONF_DB_NAME", "fsphp");
 
 /**
+ * SITE
+ */
+define("CONF_SITE_NAME", "LocalHost");
+define("CONF_SITE_LANG", "pt-br");
+define("CONF_SITE_DOMAIN", "www.localhost");
+
+/**
+ * SOCIAL
+ */
+define("CONF_SOCIAL_TWITER_CREATOR", "");
+define("CONF_SOCIAL_TWITER_PUBLISHER", "");
+define("CONF_SOCIAL_FACEBOOK_APP", "");
+define("CONF_SOCIAL_FACEBOOK_PAGE", "");
+define("CONF_SOCIAL_FACEBOOK_AUTHOR", "");
+define("CONF_SOCIAL_GOGGLE_PAGE", "");
+define("CONF_SOCIAL_GOGGLE_AUTHOR", "");
+
+/**
  * PROJECT URLs
  */
-// define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP");
 define("CONF_URL_BASE", "https://localhost/GitEssentials/FS_PHP/07-recursos-e-componentes");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
