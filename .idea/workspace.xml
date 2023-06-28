@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4bfb22-d0dc-4011-b076-9728f49cb2e0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/07-09-fornecedor-de-otimizacao/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/07-09-fornecedor-de-otimizacao/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/07-10-paginacao-de-resultados/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/07-10-paginacao-de-resultados/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Thumb.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Thumb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.json" afterDir="false" />
@@ -26,11 +23,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="render.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-09-fornecedor-de-otimizacao/render.php">
+      <file leaf-file-name="Pager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Pager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+            <state relative-caret-position="200">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paginator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/vendor/coffeecode/paginator/src/Paginator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="58" column="114" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-10-paginacao-de-resultados/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-526">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/vendor/coffeecode/paginator/example/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="39" column="1" lean-forward="true" selection-start-line="9" selection-end-line="39" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -49,6 +73,7 @@
         <option value="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Thumb.php" />
         <option value="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Seo.php" />
         <option value="$PROJECT_DIR$/07-recursos-e-componentes/07-09-fornecedor-de-otimizacao/render.php" />
+        <option value="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Pager.php" />
       </list>
     </option>
   </component>
@@ -88,7 +113,7 @@
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="07-09-fornecedor-de-otimizacao" type="462c0819:PsiDirectoryNode" />
+              <item name="07-10-paginacao-de-resultados" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
@@ -102,6 +127,36 @@
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="Support" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="coffeecode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="coffeecode" type="462c0819:PsiDirectoryNode" />
+              <item name="paginator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="coffeecode" type="462c0819:PsiDirectoryNode" />
+              <item name="paginator" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -150,16 +205,15 @@
       <workItem from="1687481380439" duration="323000" />
       <workItem from="1687937325359" duration="484000" />
       <workItem from="1687937891690" duration="273000" />
-      <workItem from="1687939938857" duration="2092000" />
+      <workItem from="1687939938857" duration="4468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6020000" />
+    <option name="totallyTimeSpent" value="8396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17571644" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -297,7 +351,35 @@
     <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-09-fornecedor-de-otimizacao/render.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/vendor/coffeecode/paginator/src/Paginator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="58" column="114" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Pager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-10-paginacao-de-resultados/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-526">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/vendor/coffeecode/paginator/example/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="9" selection-end-line="39" selection-end-column="1" />
         </state>
       </provider>
     </entry>
