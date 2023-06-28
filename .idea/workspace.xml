@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4bfb22-d0dc-4011-b076-9728f49cb2e0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/07-recursos-e-componentes/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,20 +21,7 @@
     <pharPath>C:\xampp\htdocs\GitEssentials\FS_PHP\04-php-orientado-a-objetos\04-04-carregamento-automatico\composer.phar</pharPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +32,7 @@
         <option value="$PROJECT_DIR$/04-php-orientado-a-objetos/04-04-carregamento-automatico/index.php" />
         <option value="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Upload.php" />
         <option value="$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php" />
+        <option value="$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Thumb.php" />
       </list>
     </option>
   </component>
@@ -61,7 +45,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="239" />
     <option name="y" value="5" />
     <option name="width" value="697" />
@@ -88,64 +72,37 @@
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="07-07-uma-fachada-para-arquivos" type="462c0819:PsiDirectoryNode" />
+              <item name="07-08-imagem-cache-e-miniaturas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="Support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="Support" type="462c0819:PsiDirectoryNode" />
+              <item name="Thumb.php" type="88303cf5:PhpFileNode" />
             </path>
             <path>
               <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="2023" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="2023" type="462c0819:PsiDirectoryNode" />
-              <item name="06" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="medias" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FS_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FS_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="07-recursos-e-componentes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-              <item name="medias" type="462c0819:PsiDirectoryNode" />
-              <item name="2023" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="Support" type="462c0819:PsiDirectoryNode" />
+              <item name="Thumb.php" type="88303cf5:PhpFileNode" />
+              <item name="Thumb" type="e2efd96b:PhpElementNode" />
             </path>
           </expand>
           <select />
@@ -194,16 +151,17 @@
       <workItem from="1687481380439" duration="323000" />
       <workItem from="1687937325359" duration="484000" />
       <workItem from="1687937891690" duration="273000" />
+      <workItem from="1687939938857" duration="634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3928000" />
+    <option name="totallyTimeSpent" value="4562000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.173454" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17571644" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -231,6 +189,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2075">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2050">
@@ -296,19 +264,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
           <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding>
-            <element signature="e#34#63#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/07-07-uma-fachada-para-arquivos/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07-recursos-e-componentes/source/Support/Thumb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
